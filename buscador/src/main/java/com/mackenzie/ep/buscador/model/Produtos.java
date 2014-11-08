@@ -1,4 +1,4 @@
-package com.mackenzie.ep.loja.model;
+package com.mackenzie.ep.buscador.model;
 
 import java.util.ArrayList;
 import java.util.List;

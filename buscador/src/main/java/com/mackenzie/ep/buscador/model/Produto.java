@@ -1,15 +1,28 @@
-package com.mackenzie.ep.loja.model;
+package com.mackenzie.ep.buscador.model;
 
+import java.io.Serializable;
+
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-
+@Entity
+@Table(name = "Produto")
 @XmlRootElement(name = "produto")
-public class Produto{
-
-	    private int idProduto;
+public class Produto implements Serializable{
+		private static final long serialVersionUID = 1L;
+		@Id
+		@Column(name = "idProduto")
+		private int idProduto;
+		@Column(name = "nome")
 	    private String nome;
-	    private String descricao;
+		@JoinColumn(name = "idLoja", referencedColumnName = "idLoja")
+	    private Loja idLoja;
+		@Column( name = "idSku")
+		private int idSku;
+	    @Column(name = "descricao")
+		private String descricao;
+	    
 	    private Double valor;
 	    
 	    @XmlElement
