@@ -3,16 +3,13 @@ package com.mackenzie.ep.buscador.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "Produto")
-@XmlRootElement(name = "produto")
+@Table(name = "Loja")
 public class Loja implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	@Id
+	@GeneratedValue
 	private int idLoja;
 	@Column(name = "nome")
 	private String nome;
@@ -37,4 +34,11 @@ public class Loja implements Serializable{
 	public void setEndPoint(String endPoint) {
 		this.endPoint = endPoint;
 	}
+	
+	@Override
+	public String toString() {
+		return "Loja [idLoja=" + idLoja + ", nome=" + nome + ", endPoint="
+				+ endPoint + "]";
+	}
+	
 }

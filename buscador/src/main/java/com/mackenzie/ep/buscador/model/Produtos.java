@@ -1,27 +1,34 @@
 package com.mackenzie.ep.buscador.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Produtos {
-	private List<Produto> produtos;
+	private List<Produto> produto;
+	
+	public Produtos(List<Produto> produto) {
+		super();
+		this.produto = produto;
+	}
+	
+	public Produtos(Produtos produto) {
+		super();
+		this.produto = produto.getProduto();
+	}
+	
 	public Produtos(){
-		produtos = new ArrayList<Produto>();
-	}
-	@XmlElement(name = "produto")
-	public List<Produto> getProdutos() {
-		return produtos;
+		super();
 	}
 	
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
+	public List<Produto> getProduto() {
+		return produto;
 	}
 	
-	public void addProduto(Produto produto) {
-		this.produtos.add(produto);
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+	
+	@Override
+	public String toString() {
+		return "Produtos [produto=" + produto + "]";
 	}
 }
