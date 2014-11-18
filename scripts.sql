@@ -9,10 +9,11 @@ create table Loja (idUsuario INT NOT NULL AUTO_INCREMENT, nome VARCHAR(100), log
 
 
 
-insert into Loja(nome, endPoint) values('Mackenzie Store', 'http://localhost:8080/rest/services/');
-insert into Loja(nome, endPoint) values('Mackenzie Store', 'http://localhost:8080/rest/services/');
+insert into Loja(nome, endPoint) values('Walmar Store', 'http://localhost:8081/rest/services/');
+insert into Loja(nome, endPoint) values('Amaricanas Store', 'http://localhost:8082/rest/services/');
 
 
+insert into Usuario(nome, login, senha) values('Luis','luis','1234');
 
 
 	ALTER TABLE `produto` SET COLUMN `valor` FLOAT(10,2) NOT NULL DEFAULT '0.00'
